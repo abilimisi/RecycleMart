@@ -21,9 +21,12 @@ def signup_view(request):
             user = form.save()
             login(request, user)
             return redirect('product_list')
+        else:
+            print(form.errors)  # Optional: for debugging
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
 
 
 def login_view(request):

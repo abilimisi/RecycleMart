@@ -7,10 +7,9 @@ from .models import Product
 class SignUpForm(UserCreationForm):
     email = forms.EmailField()
 
-
-class Meta:
-    model = User
-    fields = ['username', 'email', 'password1', 'password2']
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
 
 class ProductForm(forms.ModelForm):
